@@ -1,1 +1,17 @@
 
+# singly linked list
+typedef struct sllist {
+    VALUE val;
+    struct sllist = next;
+}
+node;
+
+
+
+# doubly linked list
+typedef struct dllist {
+    VALUE val;
+    struct dllist* = prev;
+    struct dllist* = nextv;
+}
+dllnode;
