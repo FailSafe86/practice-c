@@ -6,7 +6,7 @@ Selection Sort
 
 from https://en.wikipedia.org/wiki/Selection_sort
 
-Worst-case performance: O(n2)
+Worst-case performance: O(n2) comparisons, O(n) swaps
 Best-case performance: O(n2)
 Average performance: O(n2)
 
@@ -17,6 +17,8 @@ Features:
 - simple implementation
 - parformance advantages over more complicated algorithms, particularly when 
 auxiliary memory is limited.
+- typically faster for small arrays (i.e. fewer than 10-20)
+- preferable to insertion sort in erms of number of writes (O(n) swaps vs. O(n2) swaps)
 
 */
 
