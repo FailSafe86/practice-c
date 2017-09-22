@@ -1,8 +1,10 @@
-// sorting algorithms
 #include <stdio.h>
 
 /*
-From https://en.wikipedia.org/wiki/Insertion_sort
+Insertion Sort
+==============
+
+from https://en.wikipedia.org/wiki/Insertion_sort
 
 Worst-case performance: O(n2) comparisons, swaps
 Best-case performance: O(n) comparisons, O(1) swaps
@@ -72,7 +74,6 @@ void insertion_sort_recursive(int arr[], int length)
   {
     insertion_sort_recursive(arr, length-1);
     int x = arr[length];
-    printf("current x: %i\n", x);
     int j = length - 1;
     while (j >= 0 && arr[j] > x)
     {
