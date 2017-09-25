@@ -4,6 +4,7 @@
 #include "insertion_sort.c"
 #include "selection_sort.c"
 #include "binary_search.c"
+#include "quicksort.c"
 
 int tests_run = 0;
 
@@ -11,6 +12,7 @@ void insertion_sort(int input_array[], int length);
 void insertion_sort_with_swap(int input_array[], int length);
 void insertion_sort_recursive(int arr[], int length);
 void selection_sort(int input_array[], int length);
+void quicksort(int arr[], int p, int r);
 bool binary_search(int key, int array[], int min, int max);
 
 //tests on sorts
@@ -58,6 +60,17 @@ static char * test_selection_sort()
   return 0;
 }
 
+static char * test_quicksort() 
+{
+  int test_data[5] = {6,2,1,3,8};
+  quicksort(test_data, 0, 4);
+
+  mu_assert("error: quicksort, test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: quicksort, test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: quicksort, test_data[4] not sorted correctedly", test_data[4] == 8);
+  return 0;
+}
+
 
 // tests on searches
 static char * test_binary_search()
@@ -76,6 +89,7 @@ static char * all_tests()
   mu_run_test(test_insertion_sort_with_swap);
   //mu_run_test(test_insertion_sort_recursive);
   mu_run_test(test_selection_sort);
+  mu_run_test(test_quicksort);
   mu_run_test(test_binary_search);
   return 0;
 }
