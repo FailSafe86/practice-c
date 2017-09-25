@@ -21,9 +21,12 @@ static char * test_insertion_sort()
   int test_data[5] = {6,2,1,3,8};
   insertion_sort(test_data, 5);
 
-  mu_assert("error: insertion_sort, test_data[0] not sorted correctedly", test_data[0] == 1);
-  mu_assert("error: insertion_sort, test_data[2] not sorted correctedly", test_data[2] == 3);
-  mu_assert("error: insertion_sort, test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("Test: quicksort...\n");
+  mu_assert("error: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("error: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("error: test_data[4] not sorted correctedly", test_data[4] == 8);
   return 0;
 }
 
@@ -32,9 +35,12 @@ static char * test_insertion_sort_with_swap()
   int test_data[5] = {6,2,1,3,8};
   insertion_sort_with_swap(test_data, 5);
 
-  mu_assert("error: insertion_sort_with_swap, test_data[0] not sorted correctedly", test_data[0] == 1);
-  mu_assert("error: insertion_sort_with_swap, test_data[2] not sorted correctedly", test_data[2] == 3);
-  mu_assert("error: insertion_sort_with_swap, test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("Test: insertion_sort_with_swap...\n");
+  mu_assert("error: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("error: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("error: test_data[4] not sorted correctedly", test_data[4] == 8);
   return 0;
 }
 
@@ -43,9 +49,12 @@ static char * test_insertion_sort_recursive()
   int test_data[5] = {6,2,1,3,8};
   insertion_sort_recursive(test_data, 5);
 
-  mu_assert("error: insertion_sort_recursive, test_data[0] not sorted correctedly", test_data[0] == 1);
-  mu_assert("error: insertion_sort_recursive, test_data[2] not sorted correctedly", test_data[2] == 3);
-  mu_assert("error: insertion_sort_recursive, test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("Test: test_insertion_sort_recursive...\n");
+  mu_assert("error: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("error: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("error: test_data[4] not sorted correctedly", test_data[4] == 8);
   return 0;
 }
 
@@ -54,9 +63,12 @@ static char * test_selection_sort()
   int test_data[5] = {6,2,1,3,8};
   selection_sort(test_data, 5);
 
-  mu_assert("error: selection_sort, test_data[0] not sorted correctedly", test_data[0] == 1);
-  mu_assert("error: selection_sort, test_data[2] not sorted correctedly", test_data[2] == 3);
-  mu_assert("error: selection_sort, test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("Test: selection_sort...\n");
+  mu_assert("error: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("error: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("error: test_data[4] not sorted correctedly", test_data[4] == 8);
   return 0;
 }
 
@@ -65,9 +77,12 @@ static char * test_quicksort()
   int test_data[5] = {6,2,1,3,8};
   quicksort(test_data, 0, 4);
 
-  mu_assert("error: quicksort, test_data[0] not sorted correctedly", test_data[0] == 1);
-  mu_assert("error: quicksort, test_data[2] not sorted correctedly", test_data[2] == 3);
-  mu_assert("error: quicksort, test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("Test: quicksort...\n");
+  mu_assert("error: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("error: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("error: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("error: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("error: test_data[4] not sorted correctedly", test_data[4] == 8);
   return 0;
 }
 
@@ -77,6 +92,8 @@ static char * test_binary_search()
 {
   int test_data[5] = {6,2,1,3,8};
   binary_search(8, test_data, 0, 4);
+
+  //printf("Testing: binary_search...")
   mu_assert("error: binary_search", binary_search(8, test_data, 0, 4) == true);
   mu_assert("error: binary_search, the number 7 is not present in array", binary_search(7, test_data, 0, 4) == false);
   return 0;
@@ -85,6 +102,7 @@ static char * test_binary_search()
 
 static char * all_tests()
 {
+  printf("Starting...all tests\n\n");
   mu_run_test(test_insertion_sort);
   mu_run_test(test_insertion_sort_with_swap);
   //mu_run_test(test_insertion_sort_recursive);
@@ -100,7 +118,7 @@ int main(int argc, char **argv) {
          printf("%s\n", result);
      }
      else {
-         printf("ALL TESTS PASSED\n");
+         printf("\nALL TESTS PASSED\n");
      }
      printf("Tests run: %d\n", tests_run);
  
