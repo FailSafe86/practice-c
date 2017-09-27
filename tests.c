@@ -3,9 +3,10 @@
 #include "minunit.h"
 #include "insertion_sort.c"
 #include "selection_sort.c"
-#include "binary_search.c"
 #include "quicksort.c"
 #include "merge_sort.c"
+#include "bubble_sort.c"
+#include "binary_search.c"
 
 
 int tests_run = 0;
@@ -16,6 +17,7 @@ void insertion_sort_recursive(int arr[], int length);
 void selection_sort(int input_array[], int length);
 void quicksort(int arr[], int p, int r);
 void merge_sort(int arr[], int left_idx, int right_idx);
+void bubble_sort(int arr[], int length);
 
 bool binary_search(int key, int array[], int min, int max);
 
@@ -117,6 +119,21 @@ static char * test_merge_sort()
   return 0;
 }
 
+static char * test_bubble_sort() 
+{
+  int test_data[5] = {6,2,1,3,8};
+  bubble_sort(test_data, 5);
+
+  printf("Test: bubble_sort...");
+  mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("\nerror: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("\nerror: test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
 
 static char * test_binary_search()
 {
@@ -139,6 +156,7 @@ static char * all_tests()
   mu_run_test(test_selection_sort);
   mu_run_test(test_quicksort);
   mu_run_test(test_merge_sort);
+  mu_run_test(test_bubble_sort);
   mu_run_test(test_binary_search);
   return 0;
 }
