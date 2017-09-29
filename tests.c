@@ -7,20 +7,11 @@
 #include "merge_sort.c"
 #include "bubble_sort.c"
 #include "binary_search.c"
-#include "euclids_algorithm.c"
+#include "euclidean_algorithm.c"
 
 
 int tests_run = 0;
 
-void insertion_sort(int input_array[], int length);
-void insertion_sort_with_swap(int input_array[], int length);
-void insertion_sort_recursive(int arr[], int length);
-void selection_sort(int input_array[], int length);
-void quicksort(int arr[], int p, int r);
-void merge_sort(int arr[], int left_idx, int right_idx);
-void bubble_sort(int arr[], int length);
-
-bool binary_search(int key, int array[], int min, int max);
 
 //tests on sorts
 static char * test_insertion_sort() 
@@ -28,7 +19,7 @@ static char * test_insertion_sort()
   int test_data[5] = {6,2,1,3,8};
   insertion_sort(test_data, 5);
 
-  printf("Test: quicksort...");
+  printf("Test: insertion_sort...");
   mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 1);
   mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 2);
   mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 3);

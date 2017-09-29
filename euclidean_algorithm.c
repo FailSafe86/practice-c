@@ -2,7 +2,7 @@
 
 
 /*
-Euclid's Algorithm
+Euclidean Algorithm
 ==================
 
 Finding the greatest common divisor given two positive integers.

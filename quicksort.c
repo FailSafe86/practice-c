@@ -18,7 +18,7 @@ Features
 
 */
 
-
+void quicksort(int arr[], int lo, int hi);
 int partition(int arr[], int lo, int hi);
 
 // quicksort on an array of integers

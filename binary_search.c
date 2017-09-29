@@ -2,8 +2,11 @@
 #include <stdbool.h>
 #include <math.h>
 
+bool binary_search(int key, int array[], int min, int max);
+
 // binary search
-bool binary_search(int key, int array[], int min, int max) {
+bool binary_search(int key, int array[], int min, int max) 
+{
     // base case
     if (max < min) {
         return false;

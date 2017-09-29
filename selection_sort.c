@@ -22,6 +22,8 @@ auxiliary memory is limited.
 
 */
 
+void selection_sort(int input_array[], int length);
+
 // Selection sort on an array
 void selection_sort(int input_array[], int length)
 {

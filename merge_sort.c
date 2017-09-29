@@ -21,7 +21,7 @@ than quicksort does in the average case
 
 */
 
-
+void merge_sort(int arr[], int left_idx, int right_idx);
 void merge(int arr[], int left_idx, int right_idx, int end_idx);
 
 //merge sort on an array

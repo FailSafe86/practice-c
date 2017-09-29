@@ -20,6 +20,8 @@ Features
 
 */
 
+void bubble_sort(int arr[], int length);
+
 // bubble sort on an array
 void bubble_sort(int arr[], int length)
 {
