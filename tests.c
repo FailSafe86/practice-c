@@ -7,6 +7,7 @@
 #include "merge_sort.c"
 #include "bubble_sort.c"
 #include "binary_search.c"
+#include "euclids_algorithm.c"
 
 
 int tests_run = 0;
@@ -147,6 +148,29 @@ static char * test_binary_search()
 }
 
 
+static char * test_gcd()
+{
+  int test_data[2] = {119,544};
+  int answer = gcd(test_data[0], test_data[1]);
+
+  printf("Test: gcd...");
+  mu_assert("\nerror: gcd(119,544), answer should be 17", answer == 17);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
+static char * test_gcd_recursive()
+{
+  int test_data[2] = {119,544};
+  int answer = gcd_recursive(test_data[0], test_data[1]);
+
+  printf("Test: gcd_recursive...");
+  mu_assert("\nerror: gcd_recursive(119,544), answer should be 17", answer == 17);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
+
 static char * all_tests()
 {
   printf("Starting...all tests\n\n");
@@ -158,6 +182,8 @@ static char * all_tests()
   mu_run_test(test_merge_sort);
   mu_run_test(test_bubble_sort);
   mu_run_test(test_binary_search);
+  mu_run_test(test_gcd);
+  mu_run_test(test_gcd_recursive);
   return 0;
 }
 
