@@ -6,6 +6,7 @@
 #include "quicksort.c"
 #include "merge_sort.c"
 #include "bubble_sort.c"
+#include "comb_sort.c"
 #include "cocktail_shaker_sort.c"
 #include "counting_sort.c"
 #include "binary_search.c"
@@ -143,6 +144,22 @@ static char * test_cocktail_shaker_sort()
   return 0;
 }
 
+static char * test_comb_sort() 
+{
+  printf("Test: comb_sort...");
+
+  int test_data[5] = {6,2,1,3,8};
+  comb_sort(test_data, 5);
+  
+  mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("\nerror: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("\nerror: test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
 static char * test_counting_sort() 
 {
   printf("Test: counting_sort...");
@@ -205,6 +222,7 @@ static char * all_tests()
   mu_run_test(test_merge_sort);
   mu_run_test(test_bubble_sort);
   mu_run_test(test_cocktail_shaker_sort);
+  mu_run_test(test_comb_sort);
   mu_run_test(test_counting_sort);
   mu_run_test(test_binary_search);
   mu_run_test(test_gcd);
