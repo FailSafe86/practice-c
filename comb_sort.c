@@ -13,6 +13,8 @@ Average performance: O(n2/2^p)
 
 Worst-case space complexity: O(1)
 
+Stable: No
+
 Features
 --------
 - Eliminates turtles, or small values near the end of the list.

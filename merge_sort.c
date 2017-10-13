@@ -13,6 +13,8 @@ Average performance: O(n log n)
 
 Worst-case space complexity: O(n) total, O(n) auxiliary
 
+Stable: Yes
+
 Features
 --------
 - In the worst case, merge sort does about 39% fewer comparisons 

@@ -12,6 +12,8 @@ Average performance: O(n log n), O(n) (three-way partition and equal keys)
 
 Worst-case space complexity: O(n) auxiliary (naive), O(log n) auxiliary
 
+Stable: No (typical), Yes (variant dependent)
+
 Features
 --------
 

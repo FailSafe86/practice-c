@@ -12,6 +12,8 @@ Average performance: O(n+k)
 
 Worst-case space complexity: O(n+k)
 
+Stable: Yes
+
 Features
 --------
 - stable, numbers with the same value appear in the output 

@@ -12,6 +12,8 @@ Average performance: O(n2) comparisons, swaps
 
 Worst-case space complexity: O(n) total, O(1) auxiliary
 
+Stable: Yes
+
 Features
 --------
 - Simple implementation
@@ -29,7 +31,8 @@ for(i=1;i<a.length;i++)
    for(j=i;j>0;j--)
      if(a[j-1]>a[j]) {a[j-1]+=a[j]; a[j]=a[j-1]-a[j]; a[j-1]-=a[j]} else break;
 */
-void insertion(int arr[], int length);
+
+void insertion_sort(int input_array[], int length);
 void insertion_sort_with_swap(int arr[], int length);
 void insertion_sort_recursive(int arr[], int length);
 
@@ -74,7 +77,7 @@ void insertion_sort_with_swap(int input_array[], int length)
 // recursive implementation
 void insertion_sort_recursive(int arr[], int length)
 {
-  if (length >= 0)
+  if (length > 0)
   {
     insertion_sort_recursive(arr, length-1);
     int x = arr[length];

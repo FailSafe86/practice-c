@@ -12,6 +12,8 @@ Average performance: O(n2)
 
 Worst-case space complexity: O(n) total, O(1) auxiliary
 
+Stable: No
+
 Features:
 - in-place comparison sort
 - simple implementation

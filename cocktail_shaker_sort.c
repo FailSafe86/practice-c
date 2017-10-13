@@ -12,6 +12,8 @@ Average performance: O(n2)
 
 Worst-case space complexity: O(1)
 
+Stable: Yes
+
 Features
 --------
 - Twice as many writes as insertion sort
