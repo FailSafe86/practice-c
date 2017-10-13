@@ -8,6 +8,7 @@
 #include "bubble_sort.c"
 #include "comb_sort.c"
 #include "cocktail_shaker_sort.c"
+#include "shell_sort.c"
 #include "counting_sort.c"
 #include "binary_search.c"
 #include "euclidean_algorithm.c"
@@ -160,6 +161,27 @@ static char * test_comb_sort()
   return 0;
 }
 
+static char * test_shell_sort() 
+{
+  int test_data[10] = {6,2,1,3,8,4,9,7,5,0};
+  int test_gaps[3] = {5, 3, 1};
+  shell_sort(test_data, 10, test_gaps, 3);
+
+  printf("Test: shell_sort...");
+  mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 0);
+  mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 1);
+  mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 2);
+  mu_assert("\nerror: test_data[3] not sorted correctedly", test_data[3] == 3);
+  mu_assert("\nerror: test_data[4] not sorted correctedly", test_data[4] == 4);
+  mu_assert("\nerror: test_data[5] not sorted correctedly", test_data[5] == 5);
+  mu_assert("\nerror: test_data[6] not sorted correctedly", test_data[6] == 6);
+  mu_assert("\nerror: test_data[7] not sorted correctedly", test_data[7] == 7);
+  mu_assert("\nerror: test_data[8] not sorted correctedly", test_data[8] == 8);
+  mu_assert("\nerror: test_data[9] not sorted correctedly", test_data[9] == 9);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
 static char * test_counting_sort() 
 {
   printf("Test: counting_sort...");
@@ -216,13 +238,14 @@ static char * all_tests()
   printf("Starting...all tests\n\n");
   mu_run_test(test_insertion_sort);
   mu_run_test(test_insertion_sort_with_swap);
-  //mu_run_test(test_insertion_sort_recursive);
+  mu_run_test(test_insertion_sort_recursive);
   mu_run_test(test_selection_sort);
   mu_run_test(test_quicksort);
   mu_run_test(test_merge_sort);
   mu_run_test(test_bubble_sort);
   mu_run_test(test_cocktail_shaker_sort);
   mu_run_test(test_comb_sort);
+  mu_run_test(test_shell_sort);
   mu_run_test(test_counting_sort);
   mu_run_test(test_binary_search);
   mu_run_test(test_gcd);
