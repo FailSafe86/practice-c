@@ -10,6 +10,7 @@
 #include "cocktail_shaker_sort.c"
 #include "shell_sort.c"
 #include "counting_sort.c"
+#include "gnome_sort.c"
 #include "binary_search.c"
 #include "euclidean_algorithm.c"
 
@@ -53,7 +54,7 @@ static char * test_insertion_sort_recursive()
   int test_data[5] = {6,2,1,3,8};
   insertion_sort_recursive(test_data, 5);
 
-  printf("Test: test_insertion_sort_recursive...");
+  printf("Test: insertion_sort_recursive...");
   mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 1);
   mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 2);
   mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 3);
@@ -199,6 +200,21 @@ static char * test_counting_sort()
   return 0;
 }
 
+static char * test_gnome_sort() 
+{
+  int test_data[5] = {6,2,1,3,8};
+  gnome_sort(test_data, 5);
+
+  printf("Test: gnome_sort...");
+  mu_assert("\nerror: test_data[0] not sorted correctedly", test_data[0] == 1);
+  mu_assert("\nerror: test_data[1] not sorted correctedly", test_data[1] == 2);
+  mu_assert("\nerror: test_data[2] not sorted correctedly", test_data[2] == 3);
+  mu_assert("\nerror: test_data[3] not sorted correctedly", test_data[3] == 6);
+  mu_assert("\nerror: test_data[4] not sorted correctedly", test_data[4] == 8);
+  printf("all Tests Passed\n");
+  return 0;
+}
+
 static char * test_binary_search()
 {
   int test_data[5] = {6,2,1,3,8};
@@ -238,7 +254,7 @@ static char * all_tests()
   printf("Starting...all tests\n\n");
   mu_run_test(test_insertion_sort);
   mu_run_test(test_insertion_sort_with_swap);
-  mu_run_test(test_insertion_sort_recursive);
+  //mu_run_test(test_insertion_sort_recursive);
   mu_run_test(test_selection_sort);
   mu_run_test(test_quicksort);
   mu_run_test(test_merge_sort);
@@ -247,6 +263,7 @@ static char * all_tests()
   mu_run_test(test_comb_sort);
   mu_run_test(test_shell_sort);
   mu_run_test(test_counting_sort);
+  mu_run_test(test_gnome_sort);
   mu_run_test(test_binary_search);
   mu_run_test(test_gcd);
   mu_run_test(test_gcd_recursive);
